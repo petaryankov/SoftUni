@@ -11,7 +11,7 @@ public class P4CountRealNumbers {
 
         double[] numbers = Arrays.stream(scanner.nextLine().split("\\s+"))
                 .mapToDouble(Double::parseDouble).toArray();
-        Map<Double, Integer> numbersMap = new LinkedHashMap();
+        Map<Double, Integer> numbersMap = new LinkedHashMap<>();
         for (double number : numbers) {
             if (numbersMap.containsKey(number)) {
                 numbersMap.put(number, numbersMap.get(number) + 1);
