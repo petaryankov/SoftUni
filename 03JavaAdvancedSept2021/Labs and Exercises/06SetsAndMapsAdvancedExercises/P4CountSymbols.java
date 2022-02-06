@@ -13,7 +13,6 @@ public class P4CountSymbols {
             chars.putIfAbsent(symbol, 0);
             chars.put(symbol, chars.get(symbol) + 1);
         }
-        System.out.println();
         chars.forEach((key, value) -> System.out.printf("%c: %d time/s%n", key, value));
     }
 }
