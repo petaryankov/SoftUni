@@ -1,34 +1,33 @@
 package day5.SetsAndMapsAdvancedLab;
 
-import java.util.*;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
 
-public class P06ProductShop {
-
+public class P6ProductShop {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
 
+        Map<String, Map<String, Double>> shopsData = new TreeMap<>();
+
         String input = scanner.nextLine();
-        Map<String, Map<String, Double>> shopsWithProducts = new TreeMap<>();
-
         while (!input.equals("Revision")) {
-            String[] shopsData = input.split(", ");
-            String shopName = shopsData[0];
-            String product = shopsData[1];
-            Double price = Double.parseDouble(shopsData[2]);
-
-            shopsWithProducts.putIfAbsent(shopName, new LinkedHashMap<>());
-
-            shopsWithProducts.get(shopName).put(product, price);
+            String shopName = input.split(", ")[0];
+            String product = input.split(", ")[1];
+            double price = Double.parseDouble(input.split(", ")[2]);
+            shopsData.putIfAbsent(shopName,new LinkedHashMap<>());
+            Map<String, Double> productAndPrice = shopsData.get(shopName);
+            productAndPrice.put(product, price);
 
             input = scanner.nextLine();
         }
-        shopsWithProducts.forEach((key, value) -> {
-            System.out.println(key + "->");
-            value.forEach((key1, value1) -> System.out.printf("Product: %s, Price: %.1f\n"
-                    , key1, value1));
-        });
+        for (String shop : shopsData.keySet()) {
+            System.out.println(shop + "->");
+            for (var productPrice : shopsData.get(shop).entrySet()) {
+                System.out.printf("Product: %s, Price: %.1f\n"
+                        , productPrice.getKey(), productPrice.getValue());
+            }
+        }
     }
-
 }
-
