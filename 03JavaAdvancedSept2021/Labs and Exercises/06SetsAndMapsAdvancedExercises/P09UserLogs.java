@@ -25,9 +25,7 @@ public class P09UserLogs {
         users.forEach((key, value) -> {
             System.out.println(key + ":");
             if (value.size() == 1) {
-                value.forEach((ip, count) -> {
-                    System.out.println(ip + " => " + count + ".");
-                });
+                value.forEach((ip, count) -> System.out.println(ip + " => " + count + "."));
             } else {
                 StringBuilder sb = new StringBuilder();
                 value.forEach((ip, count) -> {
