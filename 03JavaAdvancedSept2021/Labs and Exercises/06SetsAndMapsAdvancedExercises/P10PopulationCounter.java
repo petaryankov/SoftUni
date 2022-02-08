@@ -29,9 +29,9 @@ public class P10PopulationCounter {
             System.out.printf("%s (total population: %d)\n", country.getKey(), totalPopulation);
             country.getValue().entrySet().stream()
                     .sorted((e1, e2) -> Long.compare(e2.getValue(), e1.getValue()))
-                    .forEach(e -> {
-                        System.out.printf("=>%s: %d\n", e.getKey(), e.getValue());
-                    });
+                    .forEach(e ->
+                            System.out.printf("=>%s: %d\n", e.getKey(), e.getValue());
+                    );
 
         });
     }
