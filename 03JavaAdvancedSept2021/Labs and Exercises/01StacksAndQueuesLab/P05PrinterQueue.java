@@ -3,26 +3,29 @@ package day1.StacksAndQueuesLab;
 import java.util.ArrayDeque;
 import java.util.Scanner;
 
-public class P05PrinterQueue {
+public class P5PrinterQueue {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String input = scanner.nextLine();
+        String command = scanner.nextLine();
+        ArrayDeque<String> queue = new ArrayDeque<>();
 
-        ArrayDeque<String> printerQueue = new ArrayDeque<>();
-        while (!input.equals("print")) {
-            if (input.equals("cancel")) {
-                if (printerQueue.isEmpty()) {
+        while (!command.equals("print")) {
+
+            if (command.equals("cancel")) {
+                if (queue.isEmpty()) {
                     System.out.println("Printer is on standby");
                 } else {
-                    System.out.println("Canceled " + printerQueue.poll());
+                    System.out.println("Canceled " + queue.poll());
                 }
             } else {
-                printerQueue.offer(input);
+                queue.offer(command);
             }
 
-            input = scanner.nextLine();
+            command = scanner.nextLine();
         }
-        printerQueue.forEach(System.out::println);
+        for (String s : queue) {
+            System.out.println(s);
+        }
     }
 }

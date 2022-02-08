@@ -1,19 +1,18 @@
 package day1.StacksAndQueuesLab;
 
 import java.util.ArrayDeque;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
-public class P6HotPotato {
+public class P06HotPotato {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String[] names = scanner.nextLine().split("\\s+");
-        ArrayDeque<String> playersQueue = new ArrayDeque<>();
-        for (String name : names) {
-            playersQueue.offer(name);
-        }
-        //Sam John Sara
+        ArrayDeque<String> playersQueue = Arrays.stream(scanner.nextLine().split(" "))
+                .map(String::valueOf).collect(Collectors.toCollection(ArrayDeque::new));
         int count = Integer.parseInt(scanner.nextLine());
+
         while (playersQueue.size() > 1) {
             for (int i = 1; i < count; i++) {
                 playersQueue.offer(playersQueue.poll());
