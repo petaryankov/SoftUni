@@ -1,4 +1,4 @@
-package day11.DefiningClassesLab.CarInfo01;
+package day11.DefiningClassesLab.P01CarInfo;
 
 public class Car {
     private String brand;
