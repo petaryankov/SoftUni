@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package day6.InheritanceExercises.P3.PlayersAndMonsters;
 
 public class Elf extends Hero {
@@ -6,3 +7,13 @@ public class Elf extends Hero {
     }
 
 }
+=======
+package day6.InheritanceExercises.P3.PlayersAndMonsters;
+
+public class Elf extends Hero {
+    public Elf(String username, int level) {
+        super(username, level);
+    }
+
+}
+>>>>>>> 01fe2f6f0ac21139af5e53f4afa82ef454bb6c19
