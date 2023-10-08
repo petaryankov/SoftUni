@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="exam" />
-        <module name="pathfinder" />
         <module name="Spring-Data-Intro-Lab" />
         <module name="P2SalesDatabase" />
         <module name="MiniORM" />
@@ -17,6 +16,9 @@
         <module name="P6FootballBettingDatabase" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="pathfinder" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
