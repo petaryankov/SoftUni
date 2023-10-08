@@ -31,4 +31,10 @@ public class LoggedUser {
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
+
+    public void reset() {
+        setUsername(null);
+        setEmail(null);
+        setFullName(null);
+    }
 }
