@@ -43,7 +43,7 @@ public class UsersController {
         return new ModelAndView("redirect:login");
     }
 
-    @PostMapping("/logout")
+    @GetMapping("/logout")
     public ModelAndView logout() {
         this.userService.logout();
 
