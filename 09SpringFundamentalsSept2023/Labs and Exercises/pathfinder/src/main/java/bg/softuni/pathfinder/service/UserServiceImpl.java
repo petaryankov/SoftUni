@@ -44,9 +44,10 @@ public class UserServiceImpl implements UserService {
             throw new IllegalArgumentException("Incorrect password");
         }
 
-        loggedUser.setUsername(user.getUsername());
-        loggedUser.setEmail(user.getEmail());
-        loggedUser.setFullName(user.getFullName());
+        this.loggedUser.setUsername(user.getUsername());
+        this.loggedUser.setEmail(user.getEmail());
+        this.loggedUser.setFullName(user.getFullName());
+        this.loggedUser.setLogged(true);
 
         return true;
     }
