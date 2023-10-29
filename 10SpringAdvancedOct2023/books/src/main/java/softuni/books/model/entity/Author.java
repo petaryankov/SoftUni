@@ -1,5 +1,6 @@
-package model.entity;
+package softuni.books.model.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -9,6 +10,7 @@ import java.util.List;
 @Entity
 @Table(name = "authors")
 public class Author extends BaseEntity {
+    @Column
     private String name;
     @OneToMany(mappedBy = "author")
     private List<Book> books;

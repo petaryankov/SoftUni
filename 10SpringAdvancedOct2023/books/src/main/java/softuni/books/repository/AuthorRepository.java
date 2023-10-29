@@ -1,6 +1,6 @@
-package repository;
+package softuni.books.repository;
 
-import model.entity.Author;
+import softuni.books.model.entity.Author;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

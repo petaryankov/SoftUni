@@ -1,4 +1,4 @@
-package model.entity;
+package softuni.books.model.entity;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

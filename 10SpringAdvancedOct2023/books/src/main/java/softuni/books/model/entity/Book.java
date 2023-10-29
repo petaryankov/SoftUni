@@ -1,5 +1,6 @@
-package model.entity;
+package softuni.books.model.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -7,8 +8,9 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "books")
 public class Book extends BaseEntity {
-
+    @Column
     private String title;
+    @Column
     private String isbn;
     @ManyToOne
     private Author author;
