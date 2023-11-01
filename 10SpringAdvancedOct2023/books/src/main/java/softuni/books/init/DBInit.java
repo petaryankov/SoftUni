@@ -25,7 +25,7 @@ public class DBInit implements CommandLineRunner {
     @Override
     public void run(String... args) {
 
-        if (bookRepository.count() > 0 && authorRepository.count() > 0) {
+        if (bookRepository.count() == 0 && authorRepository.count() == 0) {
             initJovkov();
             initNikolaiHaitov();
             initDimitarTalev();

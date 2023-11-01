@@ -3,7 +3,6 @@ package softuni.books.service;
 import org.springframework.stereotype.Service;
 import softuni.books.model.dto.AuthorDTO;
 import softuni.books.model.dto.BookDTO;
-import softuni.books.model.entity.Author;
 import softuni.books.model.entity.Book;
 import softuni.books.repository.BookRepository;
 
@@ -27,15 +26,15 @@ public class BookServiceImpl implements BookService {
     }
 
     private static BookDTO mapBookToDTO(Book book) {
-        BookDTO aBook = new BookDTO();
+        BookDTO bookDTO = new BookDTO();
         AuthorDTO authorDTO = new AuthorDTO();
         authorDTO.setName(book.getAuthor().getName());
 
-        aBook.setId(book.getId());
-        aBook.setTitle(book.getTitle());
-        aBook.setIsbn(book.getIsbn());
-        aBook.setAuthor(authorDTO);
+        bookDTO.setId(book.getId());
+        bookDTO.setTitle(book.getTitle());
+        bookDTO.setIsbn(book.getIsbn());
+        bookDTO.setAuthor(authorDTO);
 
-        return aBook;
+        return bookDTO;
     }
 }
