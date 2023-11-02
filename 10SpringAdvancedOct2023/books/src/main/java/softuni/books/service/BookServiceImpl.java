@@ -51,6 +51,7 @@ public class BookServiceImpl implements BookService {
         if (author == null) {
             author = new Author();
             author.setName(bookDTO.getAuthor().getName());
+            authorRepository.save(author);
         }
         Book book = new Book();
         book.setAuthor(author);
