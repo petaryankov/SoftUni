@@ -7,6 +7,7 @@ import softuni.books.model.entity.Book;
 import softuni.books.repository.BookRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -23,6 +24,24 @@ public class BookServiceImpl implements BookService {
                 .stream()
                 .map(BookServiceImpl::mapBookToDTO)
                 .toList();
+    }
+
+    @Override
+    public Optional<BookDTO> findBookById(Long id) {
+        return bookRepository
+                .findById(id)
+                .map(BookServiceImpl::mapBookToDTO);
+    }
+
+    @Override
+    public void deleteBookById(Long id) {
+        this.bookRepository.deleteById(id);
+    }
+
+    @Override
+    public Long createBook(BookDTO bookDTO) {
+        //todo
+        return null;
     }
 
     private static BookDTO mapBookToDTO(Book book) {
