@@ -1,4 +1,4 @@
-package web;
+package softuni.books.web;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
