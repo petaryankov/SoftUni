@@ -48,11 +48,13 @@ public class BookServiceImpl implements BookService {
         Author author = authorRepository
                 .findByName(bookDTO.getAuthor().getName())
                 .orElse(null);
+
         if (author == null) {
             author = new Author();
             author.setName(bookDTO.getAuthor().getName());
             authorRepository.save(author);
         }
+
         Book book = new Book();
         book.setAuthor(author);
         book.setIsbn(bookDTO.getIsbn());
