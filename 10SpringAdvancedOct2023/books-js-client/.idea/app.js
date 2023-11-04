@@ -25,6 +25,7 @@ function loadBooks() {
 
             let deleteBookBtn = document.createElement('button');
             deleteBookBtn.textContent = 'DELETE';
+            deleteBookBtn.dataset.id = book.id;
 
             deleteBookBtn.addEventListener('click', deleteBook);
 
@@ -40,6 +41,12 @@ function loadBooks() {
         }));
 }
 
-function deleteBook() {
-    alert("deleted")
+function deleteBook(e) {
+        let bookId = e.target.dataset.id;
+        let requestOptions = {
+                method: 'DELETE'
+        }
+    fetch(`http://localhost:8080/api/books/${bookId}`, requestOptions)
+        .then(_ => loadBooks())
+        .catch(error => console.log('error', error));
 }
