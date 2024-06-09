@@ -18,8 +18,30 @@ describe('Books', () => {
                 if (err) {
                     return done(err);
                 }
+                const body = res.body;
                 expect(res.statusCode, "Status code").to.be.equal(201)
-                console.log("response: ", res.body);
+                expect(body.id, "BookId Property").to.be.equal(book.id)
+                expect(body.title, "BookTitle Property").to.be.equal(book.title)
+                expect(body.author, "BookAuthor Property").to.be.equal(book.author)
+                console.log("response: ", body);
+                done();
+            })
+    });
+
+    it('should be able to get all books', (done) => {
+
+        chai.request(server)
+            .get('/books')
+            .end((err, res) => {
+                if (err) {
+                    return done(err);
+                }
+                const body = res.body[0];
+                expect(res.statusCode, "Status code").to.be.equal(200)
+                expect(body.id, "BookId Property").to.be.equal("1")
+                expect(body.title, "BookTitle Property").to.be.equal("My title")
+                expect(body.author, "BookAuthor Property").to.be.equal("Petar Yankov")
+                console.log("response: ", body);
                 done();
             })
     })
