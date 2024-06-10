@@ -8,7 +8,7 @@ on:
     branches: [ "main" ]
 defaults:
   run:
-    working-directory: ../Student-Registry-App
+    working-directory: ./11DevOpsMay2024/Labs and Exercises/CI-CD/Student-Registry-App
 jobs:
   build:
     runs-on: ubuntu-latest
