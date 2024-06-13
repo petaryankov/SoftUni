@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: Student-Registry-App
+        working-directory: /11DevOpsMay2024/Labs and Exercises/CI-CD/Student-Registry-App
     steps:
     - name: Checkout of the repo
       uses: actions/checkout@v4
